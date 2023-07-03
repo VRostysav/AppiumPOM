@@ -11,7 +11,15 @@ import allure
  Щоб заранити тести і отримати репорт потрібно по порядку заранити дві команди :
   1) pytest --alluredir="C:/Users/Family/AppiumPOM/AppiumPOM/Allure-Results"  - в твому випдку шлях буде інший
   2) allure serve "C:/Users/Family/AppiumPOM/AppiumPOM/Allure-Results"   - - в твому випдку шлях буде інший
- Якщо хочеш отримати репорт і ранити тести в паралель то потірбно до команди 1) в кінці додати -n
+ Якщо хочеш отримати репорт і ранити тести в паралель то потірбно до команди 1) в кінці додати -n 2
+ 
+ 
+ APPIUM INSPECTOR and APPIUM
+ 
+ для того щоб подивитися udid девайсу в консолі потрібно ввест: adb devices
+ для того щоб стартанути appium потрібно ввести команду appium -p порт
+ (відповідно значення порта потрібно змінити в змінній driver)
+ 
  
  
  """
@@ -24,8 +32,8 @@ def init_driver(request):
             "appium:platformName": "Android",
             "appium:platformVersion": "12",
             "appium:deviceName": "Pixel 5",
-            "appium:udid": "emulator-5556",
-            "appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\ConvoApp(1.4.0).apk",
+            "appium:udid": "emulator-5554",
+            "appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\CalculatorApp.apk",
             "appium:automationName": "UiAutomator2"
         }
         driver = webdriver.Remote("http://127.0.0.1:4723", options)
