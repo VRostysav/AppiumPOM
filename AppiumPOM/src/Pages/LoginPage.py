@@ -18,11 +18,17 @@ class LoginPage(LoginPageLocators):
 
     @allure.step("Enter convo number")
     def enter_convo_number(self, number):
+        #self.sl.wait_and_input_text(number, self.CONVO_NUMBER_FIELD)
+        #self.sl.click_and_input_text(number, self.CONVO_NUMBER_FIELD)
+        self.sl.wait_and_click(self.CONVO_NUMBER_FIELD)
         self.sl.wait_and_input_text(number, self.CONVO_NUMBER_FIELD)
 
     @allure.step("Enter convo password")
     def enter_convo_password(self, password):
-        self.sl.wait_and_input_text(password, self.CONVO_PASSWORD_FIELD, password)
+        #self.sl.wait_and_input_text(password, self.CONVO_PASSWORD_FIELD, password)
+        #self.sl.click_and_input_text(password, self.CONVO_PASSWORD_FIELD)
+        self.sl.wait_and_click(self.CONVO_PASSWORD_FIELD)
+        self.sl.wait_and_input_text(password, self.CONVO_PASSWORD_FIELD)
 
     @allure.step("Click Log in button one more time nad make share user is log in ")
     def click_login_button_when_all_fields_are_filed(self):

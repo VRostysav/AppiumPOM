@@ -33,10 +33,11 @@ def init_driver(request):
             "appium:platformVersion": "12",
             "appium:deviceName": "Pixel 5",
             "appium:udid": "emulator-5554",
-            "appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\CalculatorApp.apk",
-            "appium:automationName": "UiAutomator2"
+            "appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\ConvoBeta-1.4.0.apk",
+            "appium:automationName": "UiAutomator2",
+            "appium:autoGrantPermissions": "true"
         }
-        driver = webdriver.Remote("http://127.0.0.1:4723", options)
+        driver = webdriver.Remote("http://127.0.0.1:4724", options)
     # if request.param == "Pixel 6 + Android 13":
     #     options = {
     #         "appium:platformName": "Android",
@@ -45,15 +46,15 @@ def init_driver(request):
     #         "appium:udid": "emulator-5554",
     #
     #         # Лінка на тестову апку(шлях зміниш на той якиий тобі підійде).
-    #         "appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\Calculator.apk",
+    #         #"appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\Calculator.apk",
     #
     #         # Якщо потірбно використовувати конво апку а не тестову
-    #         # "appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\ConvoAPP(1.4.0).apk",
+    #          "appium:app": r"C:\Users\Family\AppiumPOM\AppiumPOM\AppBinaries\ConvoBeta-1.4.0.apk",
     #
-    #         "appium:automationName": "UiAutomator2"
+    #         "appium:automationName": "UiAutomator2",
+    #         "appium:autoGrantPermissions": "true"
     #     }
     #     driver = webdriver.Remote("http://127.0.0.1:4724", options)
-
     request.cls.driver = driver
     yield
     driver.quit()
